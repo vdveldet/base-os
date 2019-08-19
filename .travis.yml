@@ -9,7 +9,7 @@ matrix:
   - python:
     env:
       - NAME="OS Base Container"
-      - IMAGE_NAME=vdveldet-os
+      - IMAGE_NAME=vdveldet/base-os
       - DOCKERFILE=Dockerfile
       - VERSION=v1.0
 
