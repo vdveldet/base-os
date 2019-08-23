@@ -20,7 +20,7 @@ script: pytest || true ? # This is needed for the build to complete
 
 before_install:
   - docker build --file $DOCKERFILE -t $IMAGE_NAME .
-  - docker run -d -p 127.0.0.1:80:4567 --name $IMAGE_NAME $RUN_IMAGE_NAME                     # TEST if the build is running.
+  - docker run -d -p 127.0.0.1:80:4567 --name $RUN_IMAGE_NAME $IMAGE_NAME                 # TEST if the build is running.
   - docker ps -a
   - docker logs $IMAGE_NAME
   - echo "$DOCKERHUB_PASSWD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin docker.io
